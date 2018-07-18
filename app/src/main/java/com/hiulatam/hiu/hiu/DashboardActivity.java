@@ -50,7 +50,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     LinearLayout linearLayoutTitle;
-    ImageButton imageButtonNavigationView;
+    ImageButton imageButtonNavigationView, image_button_settings;
     SearchView searchViewCelebrity;
     TabLayout tabLayoutCelebrity;
     ViewPager viewPagerContent;
@@ -101,6 +101,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         viewPagerContent = (ViewPager) findViewById(R.id.view_pager_content);
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        image_button_settings = (ImageButton) findViewById(R.id.image_button_settings);
     }
 
     /**
@@ -131,6 +133,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         searchViewCelebrity.setOnCloseListener(onCloseListener);
         searchViewCelebrity.setOnQueryTextListener(onQueryTextListener);
         navigationView.setNavigationItemSelectedListener(this);
+        image_button_settings.setOnClickListener(onClickListener);
     }
 
 
@@ -184,6 +187,12 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+    private void openSettings(){
+        Intent intent = new Intent();
+        intent.setClass(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * Created by: Shiny Solutions
      * Created on: 10/03/17
@@ -199,6 +208,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                     imageButtonNavigationView.setVisibility(View.GONE);
                     linearLayoutTitle.setVisibility(View.GONE);
 
+                    break;
+
+                case R.id.image_button_settings:
+                    openSettings();
                     break;
             }
         }

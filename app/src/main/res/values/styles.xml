@@ -47,6 +47,10 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
+    <style name="verySmallFont.gray" parent="@style/verySmallFont">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
     <style name="smallFont" parent="android:Widget.TextView">
         <item name="android:textSize">@dimen/small_font</item>
     </style>
@@ -66,6 +70,10 @@
         <item name="android:shadowRadius">2</item>
     </style>
 
+    <style name="smallFont.gray" parent="@style/smallFont">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
     <style name="regularFont" parent="android:Widget.TextView">
         <item name="android:textSize">@dimen/regular_font</item>
     </style>
@@ -76,6 +84,14 @@
 
     <style name="regularFont.Bold" parent="@style/regularFont">
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="regularFont.black" parent="@style/regularFont">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="regularFont.colorPrimary" parent="@style/regularFont">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="regularFont.black.shadow" parent="@style/regularFont.Bold">
@@ -91,6 +107,10 @@
 
     <style name="largeFont.white" parent="@style/largeFont">
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="largeFont.black" parent="@style/largeFont">
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <!-- Button -->

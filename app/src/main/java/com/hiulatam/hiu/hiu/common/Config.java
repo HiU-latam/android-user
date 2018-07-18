@@ -1,5 +1,7 @@
 package com.hiulatam.hiu.hiu.common;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.nfc.Tag;
 import android.util.Log;
 
@@ -20,8 +22,19 @@ public class Config {
 
     public static final String kAll = "All";
 
+    public static final String MY_PREFS = "MyPrefs";
+    public static final String PREFS_NOTIFICATION = "NOTIFICATION PREFERENCES";
+
     public static final void logInfo(String message){
         Log.i(TAG, message);
+    }
+
+    public static SharedPreferences getSharedPreferences(Context context){
+        return context.getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE);
+    }
+
+    public static SharedPreferences.Editor getSharedPreferencesEditor(Context context){
+        return context.getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE).edit();
     }
 
 }

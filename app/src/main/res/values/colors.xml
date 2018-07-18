@@ -9,4 +9,6 @@
     <color name="card_view_two">#e6e6e6</color>
     <color name="card_view_three">#d9d9d9</color>
     <color name="card_view_four">#cccccc</color>
+    <color name="settings_expanded_bg">#e5e6e7</color>
+    <color name="gray">#dce4e9</color>
 </resources>

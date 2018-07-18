@@ -237,6 +237,16 @@
     <string name="payment_confirmation">Thank you for your payment of %s.\n\nPlease contact us if you have any question about your payment.</string>
     <string name="ok">OK</string>
 
+    <!--Preferences-->
+    <string name="notification">Notification</string>
+    <string name="profile_name">Leonardo Test</string>
+    <string name="profile">Profile</string>
+    <string name="edit">Edit</string>
+    <string name="search_settings">Start searching in settings...</string>
+    <string name="recent_request">Recent request</string>
+    <string name="logout">Logout</string>
+    <string name="preferences">Preferences</string>
+
 
 
 

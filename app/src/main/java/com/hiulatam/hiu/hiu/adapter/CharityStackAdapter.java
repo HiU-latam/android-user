@@ -12,6 +12,7 @@ import android.widget.ListAdapter;
 
 import com.an.customfontview.CustomTextView;
 import com.hiulatam.hiu.hiu.R;
+import com.hiulatam.hiu.hiu.common.Config;
 import com.hiulatam.hiu.hiu.modal.CelebrityItemModal;
 
 import java.util.ArrayList;
@@ -51,5 +52,6 @@ public class CharityStackAdapter extends ArrayAdapter<CelebrityItemModal> {
 
     public void notifyDataSetChanged(){
         super.notifyDataSetChanged();
+        this.notifyDataSetInvalidated();
     }
 }

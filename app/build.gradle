@@ -54,5 +54,6 @@ dependencies {
     compile 'com.android.support:support-core-utils:25.4.0'
     compile 'com.github.lzyzsd:circleprogress:1.2.1'
     compile 'link.fls:swipestack:0.3.0'
+    compile 'com.thoughtbot:expandablecheckrecyclerview:1.4'
     testCompile 'junit:junit:4.12'
 }
