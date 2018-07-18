@@ -55,5 +55,9 @@ dependencies {
     compile 'com.github.lzyzsd:circleprogress:1.2.1'
     compile 'link.fls:swipestack:0.3.0'
     compile 'com.thoughtbot:expandablecheckrecyclerview:1.4'
+    compile 'com.google.firebase:firebase-core:16.0.0'
+    compile 'com.google.firebase:firebase-messaging:17.1.0'
     testCompile 'junit:junit:4.12'
 }
+
+apply plugin: 'com.google.gms.google-services'
