@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -29,7 +30,7 @@ public class DetailActivity extends AppCompatActivity {
 
     CollapsingToolbarLayout collapsingToolbarLayout;
     Toolbar toolbar;
-    ImageView imageViewCelebrity;
+    ImageView imageViewCelebrity, image_button_settings;
     CustomTextView textViewCelebrityName, textViewCelebrityArticle, textViewCelebrityPercentage;
     Spinner spinnerValues;
     Button buttonNext;
@@ -73,6 +74,8 @@ public class DetailActivity extends AppCompatActivity {
         spinnerValues = (Spinner) findViewById(R.id.spinnerValue);
 
         buttonNext = (Button) findViewById(R.id.buttonNext);
+
+        image_button_settings = (ImageView) findViewById(R.id.image_button_settings);
     }
 
     /**
@@ -117,6 +120,7 @@ public class DetailActivity extends AppCompatActivity {
     public void addListeners(){
         buttonNext.setOnClickListener(onClickListener);
         spinnerValues.setOnItemSelectedListener(onItemSelectedListener);
+        image_button_settings.setOnClickListener(onClickListener);
     }
 
     /**
@@ -136,10 +140,24 @@ public class DetailActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void openSettings(){
+        Intent intent = new Intent();
+        intent.setClass(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            openCharitySelection();
+            switch (view.getId()){
+                case R.id.buttonNext:
+                    openCharitySelection();
+                    break;
+                case R.id.image_button_settings:
+                    openSettings();
+                    break;
+            }
+
         }
     };
 

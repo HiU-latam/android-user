@@ -36,7 +36,7 @@ public class CharityActivity extends AppCompatActivity {
     public static final String TAG = "CharityActivity - ";
 
     DrawerLayout drawerLayout;
-    ImageButton imageButtonNavigationView;
+    ImageButton imageButtonNavigationView, image_button_settings;
     ImageView imageViewAddCharities;
     Toolbar toolbar;
     SearchView searchViewCelebrity;
@@ -82,6 +82,8 @@ public class CharityActivity extends AppCompatActivity {
         buttonNext = (Button) findViewById(R.id.buttonNext);
 
         cardStackViewCharity = (SwipeStack) findViewById(R.id.cardStackViewChairty);
+
+        image_button_settings = (ImageButton) findViewById(R.id.image_button_settings);
     }
 
     /**
@@ -121,6 +123,7 @@ public class CharityActivity extends AppCompatActivity {
         searchViewCelebrity.setOnCloseListener(onCloseListener);
         buttonNext.setOnClickListener(onClickListener);
         imageViewAddCharities.setOnClickListener(onClickListener);
+        image_button_settings.setOnClickListener(onClickListener);
     }
 
     /**
@@ -200,6 +203,12 @@ public class CharityActivity extends AppCompatActivity {
         celebrityItemModalList.add(celebrityItemModal);
     }
 
+    private void openSettings(){
+        Intent intent = new Intent();
+        intent.setClass(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * Created by:  Shiny Solutions
      * Created on:  10/22/17
@@ -230,6 +239,9 @@ public class CharityActivity extends AppCompatActivity {
                         imageViewAddCharities.setImageResource(R.drawable.ic_favorites);
                         Config.logInfo(TAG + "onClick - set yes");
                     }
+                    break;
+                case R.id.image_button_settings:
+                    openSettings();
                     break;
             }
         }

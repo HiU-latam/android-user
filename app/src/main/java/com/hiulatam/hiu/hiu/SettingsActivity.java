@@ -6,6 +6,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.an.customfontview.CustomTextView;
 import com.hiulatam.hiu.hiu.adapter.SettingsItemAdapter;
@@ -41,6 +42,16 @@ public class SettingsActivity extends AppCompatActivity {
         bindComponents();
         init();
         addListeners();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**

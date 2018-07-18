@@ -1,5 +1,6 @@
 package com.hiulatam.hiu.hiu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.StringDef;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -34,7 +35,7 @@ public class PaymentDetailActivity extends AppCompatActivity {
 
     CollapsingToolbarLayout collapsingToolbarLayout;
     Toolbar toolbar;
-    ImageView imageViewCelebrity;
+    ImageView imageViewCelebrity, image_button_settings;
     CustomTextView textViewCelebrityName, textViewCelebrityArticle, textViewCelebrityPercentage, textViewMessageValue, textViewCharityValue, textViewTotalValue;
     SearchView searchViewCelebrity;
     EditText editTextCardNumber;
@@ -86,6 +87,8 @@ public class PaymentDetailActivity extends AppCompatActivity {
         textViewCharityValue = (CustomTextView) findViewById(R.id.textViewCharityValue);
 
         textViewTotalValue = (CustomTextView) findViewById(R.id.textViewTotalValue);
+
+        image_button_settings = (ImageView) findViewById(R.id.image_button_settings);
 
     }
 
@@ -142,6 +145,13 @@ public class PaymentDetailActivity extends AppCompatActivity {
         editTextCardNumber.addTextChangedListener(textWatcher);
         editTextCardNumber.setOnKeyListener(onKeyListener);
         buttonDone.setOnClickListener(onClickListener);
+        image_button_settings.setOnClickListener(onClickListener);
+    }
+
+    private void openSettings(){
+        Intent intent = new Intent();
+        intent.setClass(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     /**
@@ -162,6 +172,9 @@ public class PaymentDetailActivity extends AppCompatActivity {
                     PaymentConfirmationDialogFragment paymentConfirmationDialogFragment = new PaymentConfirmationDialogFragment();
                     paymentConfirmationDialogFragment.setArguments(arguments);
                     paymentConfirmationDialogFragment.show(getSupportFragmentManager(), "PaymentConfirmation");
+                    break;
+                case R.id.image_button_settings:
+                    openSettings();
                     break;
             }
         }
